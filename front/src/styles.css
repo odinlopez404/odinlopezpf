@@ -1,0 +1,112 @@
+* {
+    font-size: 16px;
+    font-family: 'Open Sans';
+}
+
+h3{
+    font-size: 20px;
+}
+
+
+.crud-menu{
+    padding: 8px 4px;
+    border-radius: 5px;
+    display: inline;
+}
+
+
+.crud-menu-user{
+    padding: 10px 0px;
+}
+
+
+.crud-menu-user {
+    background-color: rgba(0, 0, 0, 0.032);
+    padding: 2px 2px;
+    border-radius: 7px;
+    display: inline;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.113);
+    color:rgb(17, 17, 17);
+}
+.crud-menu-user:hover{
+    color:rgb(87, 87, 87);
+}
+
+
+    
+#editar {
+    background-color: rgb(249, 251, 255);
+    border: 1px solid rgb(0, 52, 173);
+    
+  }
+  
+  #eliminar {
+    background-color: rgb(255, 247, 247);
+    border: 1px solid rgb(175, 0, 0);
+    
+  }
+  #agregar{
+    color:rgb(255, 255, 255);
+    background-color: rgba(20, 20, 20, 0.388);
+    border: 1px solid rgba(49, 49, 49, 0.871);
+  }
+  
+  
+  
+  .button { 
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin-inline-start: 5px;
+    border: solid 0px ;
+  }
+
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+  
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+   
+
+  }
+  
+  .button:hover span {
+    padding-right: 20px;
+    
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+      
+
+  }
+  
+  #editar span:after {
+    font-family: FontAwesome;
+    content: "\f040";
+    color:rgb(0, 52, 173);
+    
+  }
+  
+  #eliminar span:after {
+    font-family: FontAwesome;
+    content: "\f1f8";
+    color:rgb(175, 0, 0);
+  }
+
+  #agregar span:after{
+    font-family: FontAwesome;
+    content: "\2b";
+    color:rgb(2, 165, 108);
+  }
+  
