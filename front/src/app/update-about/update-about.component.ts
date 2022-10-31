@@ -4,19 +4,18 @@ import { User } from '../model/user.model';
 import { UserService } from '../service/user.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-update-about',
+  templateUrl: './update-about.component.html',
+  styleUrls: ['./update-about.component.css']
 })
-export class HeaderComponent implements OnInit {
-  user: User = new User()
+export class UpdateAboutComponent implements OnInit {
   id!: number;
+  user: User = new User();
   constructor(
     private userService: UserService,
     private route: ActivatedRoute,
     private router: Router
-
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -28,4 +27,18 @@ export class HeaderComponent implements OnInit {
       (error) => console.log(error)
     );
   }
+
+  onSubmit() {
+    this.userService.updateUser(this.id, this.user).subscribe(
+      (data) => {
+        this.goToHome();
+      },
+      (error) => console.log(error)
+    );
+  }
+
+  goToHome() {
+    this.router.navigate(['/']);
+  }
 }
+

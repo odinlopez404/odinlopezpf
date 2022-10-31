@@ -1,18 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { Persona } from '../model/persona.model';
-import { PersonaService } from '../service/persona.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { User } from '../model/user.model';
+
+import { UserService } from '../service/user.service';
+
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
+
 export class AboutComponent implements OnInit {
-  persona: Persona = new Persona("","","","","","","","");
-  constructor(public personaService:PersonaService) { }
+  id!: number;
+  user: User = new User();
+  constructor(
+    private userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.personaService.getPersona().subscribe(data=>{this.persona=data})
+    this.id = this.route.snapshot.params['id'];
+
+    this.userService.getUserById(1).subscribe(
+      (data) => {
+        this.user = data;
+      },
+      (error) => console.log(error)
+    );
   }
 
+  updateUser(id: number) {
+    this.router.navigate(['update-user', 1]);
+  }
 }

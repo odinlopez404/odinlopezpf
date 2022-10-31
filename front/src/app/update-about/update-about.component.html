@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="col-md-6 offset-md-3">
+    <br>
+    <h3> Actualizar datos del usuario </h3>
+    <form (ngSubmit) = "onSubmit()">
+  
+        <div class="form-group">
+            <label> Nombre</label>
+            <input type="text" class ="form-control" id = "nombre"
+                [(ngModel)] = "user.nombre" name = "nombre">
+        </div>
+        <div class="form-group">
+            <label> Apellido</label>
+            <input type="text" class ="form-control" id = "apellido"
+                [(ngModel)] = "user.apellido" name = "apellido">
+        </div>
+        <div class="form-group">
+            <label> Descripción</label>
+            <input type="text" class ="form-control" id = "descripcion"
+                [(ngModel)] = "user.descripcion" name = "descripcion">
+        </div>
+        <div class="form-group">
+            <label> Titulo / Profesión</label>
+            <input type="text" class ="form-control" id = "titulo"
+                [(ngModel)] = "user.titulo" name = "titulo">
+        </div>
+        <div class="form-group">
+            <label> Link de foto de perfil</label>
+            <input type="text" class ="form-control" id = "imagenPerfil"
+                [(ngModel)] = "user.imagenPerfil" name = "imagenPerfil">
+        </div>
+        <div class="form-group">
+            <label> Link de imagen del banner</label>
+            <input type="text" class ="form-control" id = "imagenBanner"
+                [(ngModel)] = "user.imagenBanner" name = "imagenBanner">
+        </div>
+        <div class="form-group">
+            <label> Link de LinkedIn</label>
+            <input type="text" class ="form-control" id = "linkLikedin"
+                [(ngModel)] = "user.linkLikedin" name = "linkLikedin">
+                   </div>
+
+                   <div class="form-group">
+                    <label> Link de Instagram</label>
+                    <input type="text" class ="form-control" id = "linkInstagram"
+                        [(ngModel)] = "user.linkInstagram" name = "linkInstagram">
+                           </div>
+                           <br>
+
+
+        
+        <button class = "btn btn-success" type ="submit">Guardar</button>
+  
+    </form>
+  </div>
+  

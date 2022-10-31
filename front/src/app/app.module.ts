@@ -8,7 +8,9 @@ import { AboutComponent } from './about/about.component';
 import { EducationComponent } from './education/education.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { UpdateAboutComponent } from './update-about/update-about.component'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { LoginComponent } from './login/login.component'
     AboutComponent,
     EducationComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    UpdateAboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [],

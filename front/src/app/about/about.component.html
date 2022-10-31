@@ -2,15 +2,16 @@
     <div class="row">
 
       <div class="col-md-3">
-        <img class="imagen-perfil" src="{{persona.imagenPerfil}}" alt="Imagen de perfil" />
+        <img class="imagen-perfil" src="{{user.imagenPerfil}}" alt="Imagen de perfil" />
         
         <div class="datos-acerca ">
             <div class="text-center">
-        <h1>{{persona.nombre}} {{persona.apellido}}</h1>
-        <span>{{persona.titulo}}</span> 
+        <h1>{{user.nombre}} {{user.apellido}}</h1>
+        <span>{{user.titulo}}</span> 
     </div>        
     <h3><div class="crud-menu">
-    <button class="button" id="editar"><span>      Editar</span></button>
+    <button class="button" id="editar" (click) = "updateUser(user.id)"><span>      Editar</span></button>
+
     </div></h3>
 </div>
 
@@ -20,7 +21,7 @@
   
       <div class="col-md-9">
         <div class="texto-acerca">
-        {{persona.descripcion}}    
+        {{user.descripcion}}    
         </div></div>
   
     </div> </div>
