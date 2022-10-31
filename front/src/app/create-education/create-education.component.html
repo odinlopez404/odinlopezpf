@@ -1,0 +1,35 @@
+<div class="col-md-6 offset-md-3">
+    <br>
+    <h3> Agregar educacion </h3>
+    <form (ngSubmit) = "onSubmit()">
+  
+        <div class="form-group">
+            <label> Nombre de la institución</label>
+            <input type="text" class ="form-control" id = "tituloEdu"
+                [(ngModel)] = "education.tituloEdu" name = "tituloEdu">
+        </div>
+
+        <div class="form-group">
+            <label>Titulo obtenido</label>
+            <input type="text" class ="form-control" id = "cargoEdu"
+                [(ngModel)] = "education.cargoEdu" name = "cargoEdu">
+        </div>
+        <div class="form-group">
+            <label>Descripción</label>
+            <input type="text" class ="form-control" id = "descripcionEdu"
+                [(ngModel)] = "education.descripcionEdu" name = "descripcionEdu">
+        </div>
+        <div class="form-group">
+            <label>Fecha de inicio</label>
+            <input type="text" class ="form-control" id = "fechaDesdeEdu"
+                [(ngModel)] = "education.fechaDesdeEdu" name = "fechaDesdeEdu">
+        </div>
+        <div class="form-group">
+            <label>Fecha de culminación</label>
+            <input type="text" class ="form-control" id = "fechaHastaEdu"
+                [(ngModel)] = "education.fechaHastaEdu" name = "fechaHastaEdu">
+        </div>
+        <br>
+        <button class = "btn btn-success" type ="submit">Añadir</button>
+    </form>
+</div>

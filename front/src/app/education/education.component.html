@@ -1,21 +1,22 @@
 <div id="educacion">
     <div class="container">
-        <div class="educacion d-flex justify-content-between">Educación <div class="text-end"><button class="button" id="agregar"><span>Agregar educación</span></button></div></div>
+        <div class="educacion d-flex justify-content-between">Educación <div class="text-end"><button class="button" id="agregar" routerLink="create-education" routerLinkActive="active" class="nav-link"><span>Agregar educación</span></button></div></div>
        
-        <div class="row">
+        <div class="row" *ngFor = "let education of educations" >
           <div class="col-md-12">
-            <h3>Titulo educacion 
+            <h3>{{education.tituloEdu}}
               <div class="crud-menu">
-                <button class="button" id="editar"><span>      Editar</span></button>
-                <button class="button" id="eliminar"><span>      Eliminar</span></button>
+                <button class="button" id="editar" (click) = "updateEducation(education.id)"><span>      Editar</span></button>
+                
+                <button class="button" id="eliminar" (click) = "deleteEducation(education.id)"><span>      Eliminar</span></button>
             
             </div>
             </h3>
               
-              <div class="tag">Pasante</div>
+              <div class="tag">{{education.cargoEdu}}</div>
                 <p class="descripcion">
-                    Descripcion educacion ellentesque in elit non lectus malesuada molestie nec eu magna. Nam non elit magna. Fusce commodo in orci ut convallis. Phasellus vitae neque a risus vulputate ullamcorper fringilla dapibus massa. Etiam vitae odio id nunc tristique ornare ut sed dolor. Pellentesque sed tellus in nibh tincidunt lacinia laoreet at diam. Etiam finibus blandit nulla, mattis suscipit odio fermentum et. Quisque mattis egestas erat, et vestibulum dolor bibendum finibus. Nunc vel porta arcu.</p>
-                <div class="fecha">08-2022 – 10-2022</div>
+                  {{education.descripcionEdu}}  
+                  <div class="fecha">{{education.fechaDesdeEdu}} – {{education.fechaHastaEdu}}</div>
           </div>
 </div>
 

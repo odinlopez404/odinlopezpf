@@ -1,0 +1,24 @@
+<div class="col-md-6 offset-md-3">
+    <br>
+    <h3> Crear proyecto </h3>
+    <form (ngSubmit) = "onSubmit()">
+  
+        <div class="form-group">
+            <label> Nombre del proyecto</label>
+            <input type="text" class ="form-control" id = "tituloPro"
+                [(ngModel)] = "proyecto.tituloPro" name = "tituloPro">
+        </div>
+
+        <div class="form-group">
+            <label>Link de imagen del proyecto</label>
+            <input type="text" class ="form-control" id = "imagenPro"
+                [(ngModel)] = "proyecto.imagenPro" name = "imagenPro">
+        </div>
+        <div class="form-group">
+            <label>Descripción del proyecto</label>
+            <input type="text" class ="form-control" id = "descripcionPro"
+                [(ngModel)] = "proyecto.descripcionPro" name = "descripcionPro">
+        </div>
+        <button class = "btn btn-success" type ="submit">Guardar</button>
+    </form>
+</div>

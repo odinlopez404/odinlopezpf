@@ -11,6 +11,11 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UpdateAboutComponent } from './update-about/update-about.component'
 import { FormsModule } from '@angular/forms';
+import { UpdateEducationComponent } from './update-education/update-education.component';
+import { CreateEducationComponent } from './create-education/create-education.component';
+import { ProyectoComponent } from './proyecto/proyecto.component';
+import { UpdateProyectoComponent } from './update-proyecto/update-proyecto.component';
+import { CreateProyectoComponent } from './create-proyecto/create-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { FormsModule } from '@angular/forms';
     EducationComponent,
     HomeComponent,
     LoginComponent,
-    UpdateAboutComponent
+    UpdateAboutComponent,
+    UpdateEducationComponent,
+    CreateEducationComponent,
+    ProyectoComponent,
+    UpdateProyectoComponent,
+    CreateProyectoComponent
   ],
   imports: [
     BrowserModule,

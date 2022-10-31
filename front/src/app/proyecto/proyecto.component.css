@@ -1,0 +1,23 @@
+.proyecto{
+    padding: 2px;
+    margin-bottom: 5px;
+    font-size:25px;
+    color:white;
+    padding-left: 15px;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #232323d6 ;
+background-image: url("https://www.transparenttextures.com/patterns/otis-redding.png");
+}
+
+
+.container{
+    margin-top: 35px;
+    border: solid 1px rgb(221, 221, 221);
+    border-radius: 5px;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+  .row{
+    padding: 20px;
+  }
