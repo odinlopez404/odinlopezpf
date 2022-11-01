@@ -18,38 +18,38 @@ public class Skill {
 	private String nombreSkill;
         
 	@Column(name = "porcentajeSkill")
-	private String porcentajeSkill;
+	private int porcentajeSkill;
 
     public Skill() {
     }
 
-    public Skill(String nombreSkill, String porcentajeSkill) {
+    public Skill(String nombreSkill, int porcentajeSkill) {
         super();
         this.nombreSkill = nombreSkill;
         this.porcentajeSkill = porcentajeSkill;
     }
-
+    
     public long getId() {
         return id;
     }
-
+        
     public void setId(long id) {
         this.id = id;
     }
-
+        
     public String getNombreSkill() {
         return nombreSkill;
-    }
+}
 
     public void setNombreSkill(String nombreSkill) {
         this.nombreSkill = nombreSkill;
     }
 
-    public String getPorcentajeSkill() {
+    public int getPorcentajeSkill() {
         return porcentajeSkill;
     }
 
-    public void setPorcentajeSkill(String porcentajeSkill) {
+    public void setPorcentajeSkill(Integer porcentajeSkill) {
         this.porcentajeSkill = porcentajeSkill;
     }
     

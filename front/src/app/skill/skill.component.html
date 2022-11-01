@@ -1,0 +1,37 @@
+
+<div id="skill">
+    <div class="container">
+        <div class="skill d-flex justify-content-between">Skills <div class="text-end"><button class="button" id="agregar" routerLink="create-skill" routerLinkActive="active" class="nav-link"><span>Agregar skill</span></button></div></div>
+       
+        <div class="row" *ngFor = "let skill of skills" >
+          <div class="col">
+                 <circle-progress
+                [percent]="skill.porcentajeSkill"
+                [radius]="70"
+                [title]="skill.nombreSkill"
+                [showUnits]="false"
+                [showImage]="false"
+                [showSubtitle]="false"
+                [titleFontSize]="'10px'"
+                [outerStrokeWidth]="8"
+                [innerStrokeWidth]="2"
+                [outerStrokeColor]="'#A6AAAD'"
+                [innerStrokeColor]="'#505255'"
+                [animation]="true"
+                [animationDuration]="1000"
+              ></circle-progress>
+              <div class="crud-menu">
+                <button class="button" id="editar" (click) = "updateSkill(skill.id)"><span>      Editar</span></button>
+                
+                <button class="button" id="eliminar" (click) = "deleteSkill(skill.id)"><span>      Eliminar</span></button>
+     
+
+            </div>
+            
+              
+          </div>
+</div>
+
+
+  
+

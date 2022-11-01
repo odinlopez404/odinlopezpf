@@ -1,0 +1,19 @@
+<div class="col-md-6 offset-md-3">
+    <br>
+    <h3> Actualizar Skill </h3>
+    <form (ngSubmit) = "onSubmit()">
+  
+        <div class="form-group">
+            <label> Nombre del Skill</label>
+            <input type="text" class ="form-control" id = "nombreSkill"
+                [(ngModel)] = "skill.nombreSkill" name = "nombreSkill">
+        </div>
+        <div class="form-group">
+            <label> Porcentaje </label>
+            <input type="number" class ="form-control" id = "porcentajeSkill"
+                [(ngModel)] = "skill.porcentajeSkill" name = "porcentajeSkill">
+        </div>
+     
+        <button class = "btn btn-success" type ="submit">Guardar</button>
+    </form>
+</div>

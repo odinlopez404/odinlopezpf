@@ -16,6 +16,11 @@ import { CreateEducationComponent } from './create-education/create-education.co
 import { ProyectoComponent } from './proyecto/proyecto.component';
 import { UpdateProyectoComponent } from './update-proyecto/update-proyecto.component';
 import { CreateProyectoComponent } from './create-proyecto/create-proyecto.component';
+import { SkillComponent } from './skill/skill.component';
+import { CreateSkillComponent } from './create-skill/create-skill.component';
+import { UpdateSkillComponent } from './update-skill/update-skill.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
 
 @NgModule({
   declarations: [
@@ -30,15 +35,18 @@ import { CreateProyectoComponent } from './create-proyecto/create-proyecto.compo
     CreateEducationComponent,
     ProyectoComponent,
     UpdateProyectoComponent,
-    CreateProyectoComponent
+    CreateProyectoComponent,
+    SkillComponent,
+    CreateSkillComponent,
+    UpdateSkillComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-
-  ],
+    FormsModule,
+    NgCircleProgressModule.forRoot({}),
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
