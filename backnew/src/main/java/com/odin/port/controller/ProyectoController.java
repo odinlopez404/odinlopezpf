@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,19 +26,20 @@ public class ProyectoController {
     @Autowired
 	private ProyectoRepository proyectoRepository;
 	
-	// obtener todas las educaciones
+	// obtener todos los proyectos
 	@GetMapping("/proyectos")
 	public List<Proyecto> getAllProyectos(){
 		return proyectoRepository.findAll();
 	}	
 	
-	// crear educacion
+	// crear proyecto
+        @PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/proyectos")
 	public Proyecto createProyecto(@RequestBody Proyecto proyecto) {
 		return proyectoRepository.save(proyecto);
 	}
 	
-	// obtener eduacion por id
+	// obtener proyecto por id
 	@GetMapping("/proyectos/{id}")
 	public ResponseEntity<Proyecto> getProyectoById(@PathVariable Long id) {
 		Proyecto proyecto = proyectoRepository.findById(id)
@@ -45,7 +47,8 @@ public class ProyectoController {
 		return ResponseEntity.ok(proyecto);
 	}
 	
-	// actualizar educacion por id
+	// actualizar protecto por id
+        @PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("/proyectos/{id}")
 	public ResponseEntity<Proyecto> updateProyecto(@PathVariable Long id, @RequestBody Proyecto proyectoDetails){
 		Proyecto proyecto = proyectoRepository.findById(id)
@@ -63,7 +66,8 @@ public class ProyectoController {
                 
 	}
 	
-	// borrar educacion
+	// borrar proyecto
+        @PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("/proyectos/{id}")
 	public ResponseEntity<Map<String, Boolean>> deleteProyecto(@PathVariable Long id){
 		Proyecto proyecto = proyectoRepository.findById(id)

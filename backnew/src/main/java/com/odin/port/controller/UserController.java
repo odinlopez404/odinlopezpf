@@ -5,6 +5,7 @@ import com.odin.port.model.User;
 import com.odin.port.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -27,8 +28,11 @@ public class UserController {
 		return ResponseEntity.ok(user);
 	}
 	
+        
 	// actualizar usuario
-	@PutMapping("/user/{id}")
+	
+        @PreAuthorize("hasRole('ADMIN')")
+        @PutMapping("/user/{id}")
 	public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User userDetails){
 		User user = userRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("No existe el usuario con el id :" + id));

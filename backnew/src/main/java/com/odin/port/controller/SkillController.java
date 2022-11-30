@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +33,7 @@ public class SkillController {
 	}	
 	
 	// crear skill
+        @PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/skills")
 	public Skill createSkill(@RequestBody Skill skill) {
 		return skillRepository.save(skill);
@@ -46,6 +48,7 @@ public class SkillController {
 	}
 	
 	// actualizar skill por id
+        @PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("/skills/{id}")
 	public ResponseEntity<Skill> updateSkill(@PathVariable Long id, @RequestBody Skill skillDetails){
 		Skill skill = skillRepository.findById(id)
@@ -61,7 +64,8 @@ public class SkillController {
                 
 	}
 	
-	// borrar educacion
+	// borrar skill
+        @PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("/skills/{id}")
 	public ResponseEntity<Map<String, Boolean>> deleteSkill(@PathVariable Long id){
 		Skill skill = skillRepository.findById(id)

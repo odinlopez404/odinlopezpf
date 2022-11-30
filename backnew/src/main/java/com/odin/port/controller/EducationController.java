@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,7 @@ public class EducationController {
 	}	
 	
 	// crear educacion
+        @PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/educaciones")
 	public Education createEducation(@RequestBody Education education) {
 		return educationRepository.save(education);
@@ -45,6 +47,7 @@ public class EducationController {
 	}
 	
 	// actualizar educacion por id
+        @PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("/educaciones/{id}")
 	public ResponseEntity<Education> updateEducation(@PathVariable Long id, @RequestBody Education educationDetails){
 		Education education = educationRepository.findById(id)
@@ -63,6 +66,7 @@ public class EducationController {
 	}
 	
 	// borrar educacion
+        @PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("/educaciones/{id}")
 	public ResponseEntity<Map<String, Boolean>> deleteEducation(@PathVariable Long id){
 		Education education = educationRepository.findById(id)
