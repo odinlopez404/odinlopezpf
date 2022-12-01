@@ -20,6 +20,7 @@ import { SkillComponent } from './skill/skill.component';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { UpdateSkillComponent } from './update-skill/update-skill.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { interceptorProvider } from './service/interceptor-service';
 
 
 @NgModule({
@@ -47,7 +48,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     FormsModule,
     NgCircleProgressModule.forRoot({}),
     ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,9 +4,11 @@
                 <img class="logoap" src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1666227203/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%2817%29.png"></div>
     
             <div class="loginysocial">
-                <a href="/login" class="login_button" role="button"><span><i class="fa fa-user" aria-hidden="true"></i></span></a>
+                <a href="/login" class="login_button" role="button" (click)="login()" *ngIf="!isLogged"><span><i class="fa fa-user" aria-hidden="true"></i></span> </a>
+                <a role="button" class="logout_button" (click)="onLogOut()" *ngIf="isLogged"><span><i class="fa fa-sign-out" aria-hidden="true" ></i></span> </a>
                 <a href="{{user.linkInstagram}}" class="socialIcon" role="button"><span><i class="fa fa-instagram" aria-hidden="true"></i></span></a>
                 <a href="{{user.linkLikedin}}" class="socialIcon" role="button"><span><i class="fa fa-linkedin" aria-hidden="true"></i></span></a>
+                
             </div>
         </div>
     </header>

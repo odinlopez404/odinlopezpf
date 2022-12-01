@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Skill } from '../model/skill.model';
 import { SkillService } from '../service/skill.service';
+import { TokenService } from '../service/token.service';
 
 
 @Component({
@@ -11,14 +12,19 @@ import { SkillService } from '../service/skill.service';
 })
 export class SkillComponent implements OnInit {
   skills: Skill[] = [];
+  isLogged = false;
   constructor(
     private skillService: SkillService,
-    private router: Router
+    private router: Router,
+    private tokenService: TokenService
 
   ) { }
 
   ngOnInit(): void {
     this.getSkills();
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    } else { this.isLogged=false;}
   }
 
   private getSkills() {

@@ -1,6 +1,6 @@
 <div id="proyecto">
     <div class="container">
-        <div class="proyecto d-flex justify-content-between">Proyectos <div class="text-end"><button class="button" id="agregar" routerLink="create-proyecto" routerLinkActive="active" class="nav-link"><span>Agregar proyecto</span></button></div></div>
+        <div class="proyecto d-flex justify-content-between">Proyectos <div class="text-end"><button class="button" id="agregar" routerLink="create-proyecto" routerLinkActive="active" class="nav-link" *ngIf="isLogged"><span>Agregar proyecto</span></button></div></div>
        
         <div class="row" *ngFor = "let proyecto of proyectos" >
             <div class="col-md-2">
@@ -8,7 +8,7 @@
                </div>
             <div class="col-md-10">
             <h3>{{proyecto.tituloPro}}
-              <div class="crud-menu">
+              <div class="crud-menu" *ngIf="isLogged">
                 <button class="button" id="editar" (click) = "updateProyecto(proyecto.id)"><span>      Editar</span></button>
                 
                 <button class="button" id="eliminar" (click) = "deleteProyecto(proyecto.id)"><span>      Eliminar</span></button>

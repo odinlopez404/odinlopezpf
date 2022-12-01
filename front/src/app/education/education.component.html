@@ -1,11 +1,11 @@
 <div id="educacion">
     <div class="container">
-        <div class="educacion d-flex justify-content-between">Educación <div class="text-end"><button class="button" id="agregar" routerLink="create-education" routerLinkActive="active" class="nav-link"><span>Agregar educación</span></button></div></div>
+        <div class="educacion d-flex justify-content-between">Educación <div class="text-end"><button class="button" id="agregar" routerLink="create-education" routerLinkActive="active" class="nav-link" *ngIf="isLogged"><span>Agregar educación</span></button></div></div>
        
         <div class="row" *ngFor = "let education of educations" >
           <div class="col-md-12">
             <h3>{{education.tituloEdu}}
-              <div class="crud-menu">
+              <div class="crud-menu" *ngIf="isLogged">
                 <button class="button" id="editar" (click) = "updateEducation(education.id)"><span>      Editar</span></button>
                 
                 <button class="button" id="eliminar" (click) = "deleteEducation(education.id)"><span>      Eliminar</span></button>

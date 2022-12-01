@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="container">
+<div class="col-md-6 offset-md-3">
+    <br>
+    <h1>Iniciar sesión</h1>
+    <br>
+    <p>Por favor ingresar los datos del administrador</p>
+<form #f="ngForm"(ngSubmit)="onLogin()" novalidate>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="email" id="nombreUsuario" name="nombreUsuario" class="form-control" [(ngModel)]="nombreUsuario" required />
+      <label class="form-label" for="form2Example1">Correo</label>
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="password" name="password" class="form-control" [(ngModel)]="password" required />
+      <label class="form-label" for="form2Example2">Password</label>
+    </div>
+  
+
+  
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Ingresar</button>
+  
+  </form>
+</div>
+</div>

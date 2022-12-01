@@ -1,7 +1,7 @@
 
 <div id="skill">
     <div class="container">
-        <div class="skill d-flex justify-content-between">Skills <div class="text-end"><button class="button" id="agregar" routerLink="create-skill" routerLinkActive="active" class="nav-link"><span>Agregar skill</span></button></div></div>
+        <div class="skill d-flex justify-content-between">Skills <div class="text-end"><button class="button" id="agregar" routerLink="create-skill" routerLinkActive="active" class="nav-link" *ngIf="isLogged"><span>Agregar skill</span></button></div></div>
        
         <div class="row" *ngFor = "let skill of skills" >
           <div class="col">
@@ -20,7 +20,7 @@
                 [animation]="true"
                 [animationDuration]="1000"
               ></circle-progress>
-              <div class="crud-menu">
+              <div class="crud-menu" *ngIf="isLogged">
                 <button class="button" id="editar" (click) = "updateSkill(skill.id)"><span>      Editar</span></button>
                 
                 <button class="button" id="eliminar" (click) = "deleteSkill(skill.id)"><span>      Eliminar</span></button>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Proyecto } from '../model/proyecto.model';
 import { ProyectoService } from '../service/proyecto.service';
+import { TokenService } from '../service/token.service';
 
 @Component({
   selector: 'app-proyecto',
@@ -9,15 +10,20 @@ import { ProyectoService } from '../service/proyecto.service';
   styleUrls: ['./proyecto.component.css']
 })
 export class ProyectoComponent implements OnInit {
+  isLogged = false;
   proyectos: Proyecto[] = [];
   constructor(
     private proyectoService: ProyectoService,
-    private router: Router
+    private router: Router,
+    private tokenService: TokenService
 
   ) { }
 
   ngOnInit(): void {
     this.getProyectos();
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    } else { this.isLogged=false;}
   }
 
   private getProyectos() {
@@ -36,6 +42,8 @@ export class ProyectoComponent implements OnInit {
       this.getProyectos();
     });
   }
+
+
 
 }
 
