@@ -25,22 +25,22 @@ header{
         font-size: 13px;
     }
     
-    .socialIcon{
-        font-size: 17px; color:white;
-        margin-left: 10px;
-        background-color:rgb(0, 0, 0);
-        border: none;
-        color:#fff;
-        border-radius: 5px;
-        padding: 4px 10px;
-        margin-right: 5px;
-        
+    .social{
+      color:white;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-right: 5px;
+      background-color:rgb(0, 0, 0);
     }
-    .socialIcon:hover{
-        cursor: pointer;
-        transition: all 0.5s ease 0s;
-        color: rgb(190, 190, 190);
+
+    .social:hover{
+      color:white;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-right: 5px;
+      background-color:rgba(18, 18, 18, 0.362);
     }
+  
     .login_button{
         background-color:rgb(0, 0, 0);
         color:#fff;
@@ -154,5 +154,5 @@ header{
        .logoapmovil{ 
         display: inline-block !important; /*MUESTRO UN LOGO MAS PEQUEÑO*/
         width: 100px;
-       };
-    }
+       }
+      }
